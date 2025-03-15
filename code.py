@@ -65,7 +65,7 @@ class LSTM(nn.Module):
       
 model = LSTM()
 loss_function = nn.MSELoss()
-optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+optimizer = torch.optim.Adam(model.parameters(), lr=0.0003)
 
 from tqdm import tqdm
 import torch
