@@ -9,6 +9,7 @@ This project involves developing a predictive model using Long Short-Term Memory
 - Pandas
 - Matplotlib
 - Scikit-learn
+- Google Colab   
 
 ## Project Overview
 
@@ -43,4 +44,7 @@ The predicted stock prices closely align with the actual values, showing the mod
 ## Future Improvements
 -Hyperparameter tuning to optimize the model.   
 -Incorporating more features such as trading volume and external factors (e.g., global financial indicators).   
--Use of advanced architectures like Bidirectional LSTMs or GRU (Gated Recurrent Units).
+-Use of advanced architectures like Bidirectional LSTMs or GRU (Gated Recurrent Units).    
+
+## Colab link
+https://colab.research.google.com/drive/1zPzxtpsuLRQXNkURDGsT93NqD-NjC6zZ?usp=sharing  
