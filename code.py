@@ -65,8 +65,34 @@ class LSTM(nn.Module):
       
 model = LSTM()
 loss_function = nn.MSELoss()
-
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+
+from tqdm import tqdm
+import torch
+import numpy as np
+
+epochs = 10
+for i in tqdm(range(epochs), desc="Epoch Progress"):
+    epoch_loss = 0
+    for seq, labels in train:  # Removed tqdm from here
+        seq = torch.from_numpy(np.array(seq)).type(torch.FloatTensor)
+        labels = torch.from_numpy(np.array(labels)).type(torch.FloatTensor)
+
+        optimizer.zero_grad()
+
+        y_pred = model(seq)
+
+        labels = labels.view(1)
+
+        single_loss = loss_function(y_pred, labels)
+        single_loss.backward()
+        optimizer.step()
+
+        epoch_loss += single_loss.item()
+
+    average_loss = epoch_loss / len(train)
+    print(f'epoch: {i:3} loss: {average_loss:.10f}')
+    
 model.eval()
 actual = []
 pred = []
