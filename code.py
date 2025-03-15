@@ -3,7 +3,7 @@ from torch import nn
 import matplotlib.pyplot as plt
 import pandas as pd
 
-url="https://raw.githubusercontent.com/Sai-Manasvi/stock-prediction-using-lstm/refs/heads/main/goldstock.csv"
+url="https://raw.githubusercontent.com/Sai-Manasvi/gold-stock-prediction-using-lstm/refs/heads/main/goldstock.csv"
 df = pd.read_csv(url)
 df.drop(['Unnamed: 0'], axis=1, inplace = True)
 
